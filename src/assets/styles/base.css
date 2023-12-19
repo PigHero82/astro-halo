@@ -1,0 +1,61 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-halo {
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: .1em;
+}
+.spacing-halo {
+  letter-spacing: .3em;
+}
+
+@media screen and (min-width: 992px) {
+  .notched {
+      margin-top: -29px;
+      padding-top: 29px;
+      padding-bottom: 29px;
+      -webkit-clip-path: polygon(0 0,30% 0,calc(30% + 96px) 28px,calc(70% - 96px) 28px,70% 0,100% 0,100% 100%,0 100%);
+      clip-path: polygon(0 0,30% 0,calc(30% + 96px) 28px,calc(70% - 96px) 28px,70% 0,100% 0,100% 100%,0 100%);
+  }
+
+  .notched-footer {
+    margin-top: -29px;
+    padding-top: 29px;
+    -webkit-clip-path: polygon(0 28px,30% 28px,calc(30% + 96px) 0,calc(70% - 96px) 0,70% 28px,100% 28px,100% 100%,0 100%);
+    clip-path: polygon(0 28px,30% 28px,calc(30% + 96px) 0,calc(70% - 96px) 0,70% 28px,100% 28px,100% 100%,0 100%);
+  }
+}
+
+.notched {
+  margin-top: -15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  -webkit-clip-path: polygon(0 0,30% 0,calc(30% + 32px) 14px,calc(70% - 32px) 14px,70% 0,100% 0,100% 100%,0 100%);
+  clip-path: polygon(0 0,30% 0,calc(30% + 32px) 14px,calc(70% - 32px) 14px,70% 0,100% 0,100% 100%,0 100%);
+}
+
+.notched-footer {
+  background-color: #141414;
+  margin-top: -15px;
+  padding-top: 15px;
+  -webkit-clip-path: polygon(0 14px,30% 14px,calc(30% + 32px) 0,calc(70% - 32px) 0,70% 14px,100% 14px,100% 100%,0 100%);
+  clip-path: polygon(0 14px,30% 14px,calc(30% + 32px) 0,calc(70% - 32px) 0,70% 14px,100% 14px,100% 100%,0 100%);
+}
+
+
+@layer components {
+  .container {
+    @apply !min-w-[100px]
+  }
+
+  .text-secondary {
+    @apply text-[#b4b4b4]
+  }
+
+  .btn {
+    @apply font-halo text-[16px] font-normal
+  }
+}

@@ -1,0 +1,169 @@
+---
+// Components
+import { AvailableIcons, BackToTop, Button, Divider, FooterLink, IndustriesMenu, Language, Menu, NewsList, SocialMedia } from "../components"
+
+// Icons
+import { BsChevronDoubleRight } from "react-icons/bs"
+import { LiaExternalLinkSquareAltSolid } from "react-icons/lia"
+import { PiList } from "react-icons/pi"
+
+// Layouts
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Welcome to Astro.">
+	<div class="drawer">
+		<input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
+		<div class="drawer-content">
+			<header class="fixed w-full bg-black 2xl:bg-black/80 z-10 flex justify-between items-stretch">
+				<Fragment>
+					<section class="hidden 2xl:flex gap-3">
+						<a href="https://www.halowaypoint.com" class="shrink-0 flex flex-col justify-center p-5">
+							<img src="/logo.webp" alt="Logo" class="w-full max-w-[170px]" />
+						</a>
+			
+						<Menu.Desktop client:load />
+					</section>
+			
+					<section class="hidden 2xl:flex gap-3">
+						<section class="h-full flex flex-col justify-center">
+							<Button.Secondary color="orange" className="py-auto group-hover/item:scale-95 group-active/item:scale-100 text-black">
+								<div class="transition translate-x-2 group-hover/item:translate-x-0 spacing-halo">Get Halo</div>
+				
+								<section class="group-hover/item:visible invisible mb-50 transition -translate-x-1 group-hover/item:translate-x-1">
+									<BsChevronDoubleRight size={10} />
+								</section>
+							</Button.Secondary>
+						</section>
+			
+						<button class="h-full bg-[#141414] font-halo px-5 text-lg text-white">SIGN IN</button>
+					</section>
+				</Fragment>
+		
+				<Fragment>
+					<label for="my-drawer" class="cursor-pointer drawer-button 2xl:hidden block bg-[#141414] p-2">
+						<PiList size={35} />
+					</label>
+
+					<a href="https://www.halowaypoint.com/" class="2xl:hidden block p-2">
+						<img src="/logo.webp" alt="Logo" class="h-[35px]" />
+					</a>
+		
+					<a href="https://www.halowaypoint.com/sign-in?path=/" class="2xl:hidden block bg-[#141414] p-2">
+						<img src="https://www.halowaypoint.com/static/profile/profile-round.png" alt="Chief Head" class="h-[35px] aspect-[1/1]" />
+					</a>
+				</Fragment>
+			</header>
+		
+			<section
+				class="md:h-[1100px] h-[1200px] w-full md:bg-[image:var(--image-url)] bg-[image:var(--image-mobile-url)] bg-cover md:bg-right bg-top bg-origin-border"
+				style="--image-url: url(https://wpassets-intone.test.halowaypoint.com/wp-content/2023/10/vNext-MBI-Infinite-Hero-Desktop-S5-R01-scaled.jpg); --image-mobile-url: url(https://wpassets-intone.test.halowaypoint.com/wp-content/2023/10/vNext-MBI-Infinite-Hero-Mobile-S5-R01.jpg);"
+			>
+				<section class="h-full bg-gradient-to-r lg:from-transparent md:from-black to-transparent">
+					<section class="h-full container md:mb-0 pb-10">
+						<section class="h-full lg:pt-0 pt-28 flex flex-col md:justify-center justify-end gap-16">
+							<section class="md:max-w-[600px] lg:visible invisible">
+								<Divider.Primary />
+							</section>
+			
+							<section class="md:max-w-[600px] flex flex-col gap-8">
+								<h1 class="text-white text-3xl lg:text-6xl font-halo spacing-halo">HALO INFINITE</h1>
+								<p class="w-[90%] text-[14px] text-secondary">Halo Infinite's next multiplayer update has arrived. Season 5: Reckoning offers an all-new Battle Pass featuring Flood-inspired rewards, new maps, a new mode, and a sophisticated AI Toolkit for Forge. Coming later in Season 5, Firefight: King of the Hill offers a refreshing twist on the beloved co-op wave-survival mode.</p>
+							</section>
+			
+							<section class="md:max-w-[600px] flex flex-col gap-5">
+								<div class="font-halo text-secondary">AVAILABLE ON:</div>
+								<AvailableIcons />
+							</section>
+							
+							<section class="md:max-w-[600px] flex flex-col gap-5">
+								<div class="font-halo text-secondary">PLAY NOW ON XBOX GAME PASS</div>
+		
+								<section class="flex md:flex-row flex-col gap-5">
+									<Button.Primary>
+										Watch Trailer <LiaExternalLinkSquareAltSolid />
+									</Button.Primary>
+			
+									<Button.Secondary className="group-hover/item:scale-95 group-active/item:scale-100">
+										<div class="transition translate-x-2 group-hover/item:translate-x-0 spacing-halo">LEARN MORE</div>
+				
+										<section class="group-hover/item:visible invisible mb-50 transition -translate-x-1 group-hover/item:translate-x-1">
+											<BsChevronDoubleRight size={10} />
+										</section>
+									</Button.Secondary>
+								</section>
+							</section>
+			
+							<section class="lg:md:max-w-[600px] w-full md:block hidden">
+								<Divider.Primary />
+							</section>
+						</section>
+					</section>
+				</section>
+			</section>
+		
+			<section class="bg-[#1f2c32] notched">
+				<section class="container py-10">
+					<h1 class="text-5xl font-halo font-thin">NEWS</h1>
+					<Divider.Primary className="my-5" />
+					<NewsList />
+				</section>
+			</section>
+		
+			<footer class="notched-footer">
+				<section class="px-10 pb-10 flex flex-col gap-10 text-center">
+					<BackToTop onClick={console.log} />
+					<Divider.Dashed />
+		
+					<section class="flex flex-col gap-5">
+						<small class="font-halo">FOLLOW US</small>
+						<SocialMedia />
+					</section>
+		
+					<Divider.Dashed />
+		
+					<section class="flex lg:flex-row flex-col justify-between items-center gap-10">
+						<section class="flex justify-center items-center gap-5">
+							<a href="https://www.343industries.com/" target="_blank">
+								<img src="https://www.halowaypoint.com/static/logos/343-industries.png" alt="343 Logo" class="w-24" />
+							</a>
+			
+							<section class="flex sm:flex-row flex-col sm:items-center items-start gap-5 font-halo">
+								<IndustriesMenu />
+							</section>
+						</section>
+		
+						<Divider.Dashed className="lg:hidden block" />
+		
+						<section class="flex items-center gap-5">
+							<a href="http://www.xboxgamestudios.com/" target="_blank">
+								<img src="https://www.halowaypoint.com/static/logos/xbox-game-studios.png" alt="Xbox Game Studios Logo" class="w-24" />
+							</a>
+		
+							<img src="https://www.halowaypoint.com/images/esrb/rp-m.jpg" alt="ESRB M" class="w-48" />
+						</section>
+					</section>
+				</section>
+		
+				<section class="p-8 bg-black flex xl:flex-row flex-col xl:justify-between gap-5">
+					<section class="grow">
+						<Language client:load />
+					</section>
+		
+					<section class="flex flex-wrap gap-5">
+						<FooterLink />
+					</section>
+				</section>
+			</footer>
+		</div>
+
+		<div class="drawer-side mt-[50px]">
+			<ul class="menu w-full min-h-full bg-[#242c2f] text-base-content p-0 font-halo">
+				<!-- Sidebar content here -->
+				<li class="px-4 py-5 text-3xl">MENU</li>
+				<Menu.Mobile client:load />
+			</ul>
+		</div>
+	</div>
+</Layout>
